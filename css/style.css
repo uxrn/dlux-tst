@@ -1,0 +1,822 @@
+/* Global Styles */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #333333;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "DM Serif Text", serif;
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    transition: all 0.3s ease;
+}
+
+/* Center mobile menu items */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+    .navbar-nav {
+        margin: 0 auto;
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Hamburger menu styles */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: all 0.3s ease;
+}
+
+/* White hamburger on home page */
+.home-page .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Black hamburger when scrolled on home page */
+.home-page .navbar.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23000000' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Link Styles */
+.nav-link, footer a {
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+/* Only apply white text on home page */
+.home-page .nav-link {
+    color: var(--secondary-color) !important;
+}
+
+.home-page .navbar.scrolled .nav-link {
+    color: var(--primary-color) !important;
+}
+
+/* Hover effects for nav links */
+.nav-link:hover {
+    opacity: 1;
+    background-color: var(--primary-color);
+    color: var(--secondary-color) !important;
+}
+
+.home-page .nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color) !important;
+}
+
+.home-page .navbar.scrolled .nav-link:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color) !important;
+}
+
+/* Footer specific link styles */
+footer .nav-link, 
+footer a:not(.social-links a) {
+    padding: 0.5rem 1rem !important;
+}
+
+/* Footer link hover effects */
+footer .nav-link:hover, 
+footer a:not(.social-links a):hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color) !important;
+    opacity: 1;
+}
+
+/* Social links in footer */
+.social-links a, 
+footer .social-links a {
+    padding: 0 !important;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color) !important;
+    opacity: 1;
+}
+
+.social-links a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Active link state */
+.nav-link.active {
+    font-weight: 600;
+}
+
+.nav-link.active:hover {
+    opacity: 1;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+}
+
+#hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#hero .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cursor {
+    opacity: 1;
+    animation: blink 1.2s infinite;
+    color: white;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.btn-outline-light {
+    border-width: 2px;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-shadow: none;
+    border-radius: 50px;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Work Section */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100vh;
+    width: 100%;
+}
+
+/* Work Page Specific Grid */
+.work-page-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 150vh;
+    width: 100%;
+}
+
+.work-panel {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.work-panel-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-panel-content img {
+    position: relative;
+    z-index: 1;
+}
+
+.work-logo {
+    max-height: 120px;
+    width: auto;
+    transition: all 0.5s ease;
+    z-index: 1;
+    filter: blur(0);
+}
+
+.work-overlay-dark {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    padding: 2rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.work-overlay-light {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    padding: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.work-panel:hover .work-overlay-dark,
+.work-panel:hover .work-overlay-light {
+    opacity: 0.9;
+    transform: translateY(0);
+}
+
+.work-panel:hover .work-logo {
+    transform: scale(0.8);
+    opacity: 0.2;
+    filter: blur(4px);
+}
+
+.work-overlay-dark h3,
+.work-overlay-light h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.1s;
+}
+
+.work-overlay-dark p,
+.work-overlay-light p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.2s;
+    opacity: 0.9;
+}
+
+.work-overlay-dark .btn,
+.work-overlay-light .btn {
+    position: relative;
+    z-index: 3;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.3s;
+    border-width: 2px;
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    border-radius: 50px;
+    background-color: transparent;
+}
+
+.work-overlay-dark .btn {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.work-overlay-light .btn {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.work-overlay-dark .btn:hover,
+.work-overlay-light .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.work-overlay-dark .btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.work-overlay-light .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.work-panel:hover .work-overlay-dark h3,
+.work-panel:hover .work-overlay-dark p,
+.work-panel:hover .work-overlay-dark .btn,
+.work-panel:hover .work-overlay-light h3,
+.work-panel:hover .work-overlay-light p,
+.work-panel:hover .work-overlay-light .btn {
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+footer ul li {
+    margin-bottom: 0.75rem;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 3rem;
+    }
+    
+    #hero .lead {
+        font-size: 1.25rem;
+    }
+    
+    .work-grid,
+    .work-page-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 50vh);
+        height: auto;
+    }
+
+    .work-panel {
+        height: 50vh;
+    }
+
+    .work-logo.square {
+        max-height: 160px;
+        max-width: 160px;
+    }
+
+    .work-logo.rectangle {
+        max-height: 80px;
+    }
+
+    .work-overlay-dark h3,
+    .work-overlay-light h3 {
+        font-size: 1.5rem;
+    }
+
+    .work-overlay-dark p,
+    .work-overlay-light p {
+        font-size: 1rem;
+    }
+}
+
+/* Client Carousel Styles */
+.client-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.client-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.client-track {
+    display: flex;
+    gap: 6rem;
+    animation: scroll 30s linear infinite;
+    padding: 0 4rem;
+}
+
+.client-track:hover {
+    animation-play-state: paused;
+}
+
+.client-logo {
+    max-height: 100px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Enhanced fade effect on edges */
+.client-carousel::before,
+.client-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.client-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(248, 249, 250, 1) 0%,
+        rgba(248, 249, 250, 0.9) 20%,
+        rgba(248, 249, 250, 0.7) 40%,
+        rgba(248, 249, 250, 0.4) 60%,
+        rgba(248, 249, 250, 0.2) 80%,
+        rgba(248, 249, 250, 0) 100%
+    );
+}
+
+.client-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(248, 249, 250, 1) 0%,
+        rgba(248, 249, 250, 0.9) 20%,
+        rgba(248, 249, 250, 0.7) 40%,
+        rgba(248, 249, 250, 0.4) 60%,
+        rgba(248, 249, 250, 0.2) 80%,
+        rgba(248, 249, 250, 0) 100%
+    );
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 2rem));
+    }
+}
+
+@media (max-width: 768px) {
+    .client-logo {
+        max-height: 40px;
+    }
+    
+    .client-track {
+        gap: 2rem;
+        padding: 0 1.5rem;
+        animation-duration: 20s;
+    }
+
+    .client-carousel::before,
+    .client-carousel::after {
+        width: 100px;
+    }
+}
+
+/* Add a faster animation for mobile */
+@media (max-width: 768px) {
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-50% - 0.75rem));
+        }
+    }
+}
+
+.core-concepts {
+    width: 100%;
+    height: 70vh;
+    background: #1a1a1a;
+    color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.core-concept-panel {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.core-concept-content {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.letter-container-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.letter-container-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.letter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.letter-group span {
+    font-family: "Outfit", sans-serif;
+    margin: 0;
+    font-size: 4.5rem;
+    color: var(--secondary-color);
+    transition: font-size 0.5s ease;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition-delay: 0s; /* No delay on hover in */
+}
+
+/* Core Concepts Animation Styles */
+.letter-group.active span {
+    font-size: 1.75rem;
+}
+
+/* Add transition delay for size increase */
+.letter-group:not(.active) span {
+    transition-delay: 5s; /* 5 second delay before size increase */
+}
+
+.letter-group p {
+    font-size: 4.5rem;
+    margin: 0;
+    color: var(--secondary-color);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+    min-height: 1.5em; /* Reserve space for the text */
+    transition-delay: 0s; /* No delay on hover in */
+}
+
+.letter-group.active p {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add transition delay for fade out */
+.letter-group:not(.active) p {
+    transition-delay: 5s; /* 5 second delay before fade out */
+}
+
+/* Add a new class for when typing is complete */
+.letter-group.typing-complete p {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0s;
+}
+
+/* Add fade-out animation class */
+.letter-group.fade-out span {
+    font-size: 4.5rem;
+    transition-delay: 0s;
+}
+
+.letter-group.fade-out p {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition-delay: 0s;
+}
+
+/* Add hover cursor style */
+.core-concepts {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .core-concepts {
+        height: auto;
+    }
+
+    .core-concept-panel {
+        height: 40vh;
+        padding: 1.5rem;
+    }
+
+    /* Mobile-specific styles for core concepts */
+    .letter-container-right,
+    .letter-container-left {
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        gap: 0 !important;
+    }
+
+    .letter-group {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .letter-group span {
+        font-size: 1.25rem !important;
+    }
+
+    .letter-group p {
+        font-size: 3.5rem !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Disable all animations on mobile */
+    .letter-group.active span,
+    .letter-group:not(.active) span,
+    .letter-group.active p,
+    .letter-group:not(.active) p,
+    .letter-group.typing-complete p,
+    .letter-group.fade-out span,
+    .letter-group.fade-out p {
+        transition: none !important;
+        transition-delay: 0s !important;
+    }
+}
+
+/* Work Logo Specific Sizes */
+#grype-logo {
+    max-height: 90px;
+}
+
+#meatshack-logo {
+    max-height: 100px;
+}
+
+#akimbo-logo {
+    max-height: 220px;
+}
+
+#bellryan-logo {
+    max-height: 120px;
+}
+
+#namerie-logo {
+    max-height: 70px;
+}
+
+#citc-logo {
+    max-height: 100px;
+}
+
+@media (max-width: 768px) {
+    #grype-logo {
+        max-height: 60px;
+    }
+
+    #meatshack-logo {
+        max-height: 70px;
+    }
+
+    #akimbo-logo {
+        max-height: 140px;
+    }
+
+    #bellryan-logo {
+        max-height: 80px;
+    }
+
+    #namerie-logo {
+        max-height: 70px;
+    }
+
+    #namerie-citc-logo {
+        max-height: 70px;
+    }
+}
+
+/* Carousel Logo Specific Styles */
+#carousel-grype {
+    width: 130px !important;
+    padding-top: 5px;
+}
+
+#carousel-meatshack {
+    width: 200px !important;
+    padding-bottom: 10px;
+}
+
+#carousel-akimbo {
+    width: 80px !important;
+    padding-bottom: 15px;
+}
+
+#carousel-bellryan {
+    width: 180px !important;
+    padding-top: 10px;
+}
+
+#carousel-namerie {
+    width: 200px !important;
+}
+
+@media (max-width: 768px) {
+    .client-logo {
+        max-height: 100px;
+    }
+
+    #carousel-grype {
+        width: 90px !important;
+        padding-top: 3px;
+    }
+
+    #carousel-meatshack {
+        width: 140px !important;
+        padding-bottom: 7px;
+    }
+
+    #carousel-akimbo {
+        width: 50px !important;
+        padding-bottom: 10px;
+    }
+
+    #carousel-bellryan {
+        width: 120px !important;
+        padding-top: 7px;
+    }
+
+    #carousel-namerie {
+        width: 140px !important;
+    }
+} 
