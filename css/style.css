@@ -225,8 +225,8 @@ footer .social-links a {
 .work-page-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    height: 150vh;
+    grid-template-rows: repeat(4, 1fr);
+    height: 200vh;
     width: 100%;
 }
 
@@ -413,9 +413,9 @@ footer a {
 
     .work-page-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 50vh);
+        grid-template-rows: repeat(8, 50vh);
         height: auto;
-        min-height: 300vh;
+        min-height: 400vh;
     }
 
     .work-panel {
@@ -459,8 +459,10 @@ footer a {
 .client-track {
     display: flex;
     gap: 6rem;
-    animation: scroll 30s linear infinite;
+    animation: scroll 60s linear infinite;
     padding: 0 4rem;
+    width: fit-content;
+    will-change: transform;
 }
 
 .client-track:hover {
@@ -522,19 +524,15 @@ footer a {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-50% - 2rem));
+        transform: translateX(calc(-50% - 3rem));
     }
 }
 
 @media (max-width: 768px) {
-    .client-logo {
-        max-height: 40px;
-    }
-    
     .client-track {
-        gap: 2rem;
+        gap: 3rem;
         padding: 0 1.5rem;
-        animation-duration: 20s;
+        animation-duration: 45s;
     }
 
     .client-carousel::before,
@@ -550,7 +548,7 @@ footer a {
             transform: translateX(0);
         }
         100% {
-            transform: translateX(calc(-50% - 0.75rem));
+            transform: translateX(calc(-50% - 1.5rem));
         }
     }
 }
@@ -745,6 +743,14 @@ footer a {
     max-height: 100px;
 }
 
+#savies-logo {
+    max-height: 100px;
+}
+
+#itm-logo {
+    max-height: 180px;
+}
+
 @media (max-width: 768px) {
     #grype-logo {
         max-height: 60px;
@@ -768,6 +774,21 @@ footer a {
 
     #citc-logo {
         max-height: 70px;
+    }
+
+    #savies-logo {
+        max-height: 60px;
+    }
+
+    #itm-logo {
+        max-height: 130px;
+    }
+
+    .work-page-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 50vh);
+        height: auto;
+        min-height: 400vh;
     }
 }
 
@@ -794,6 +815,20 @@ footer a {
 
 #carousel-namerie {
     width: 200px !important;
+}
+
+#carousel-itm {
+    width: 80px !important;
+    padding-bottom: 10px;
+}
+
+#carousel-citc {
+    width: 200px !important;
+}
+
+#carousel-savies {
+    width: 130px !important;
+    padding-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -823,5 +858,19 @@ footer a {
 
     #carousel-namerie {
         width: 140px !important;
+    }
+
+    #carousel-itm {
+        width: 55px !important;
+        padding-bottom: 5px;
+    }
+
+    #carousel-citc {
+        width: 140px !important;
+    }
+
+    #carousel-savies {
+        width: 100px !important;
+        padding-top: 3px;
     }
 } 
