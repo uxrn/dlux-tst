@@ -29,34 +29,20 @@ function setActiveNavLink() {
     }
 }
 
-// Get appropriate path prefix based on current location
-function getPathPrefix() {
-    // Check if we're in a subdirectory by looking at the pathname
-    const pathname = window.location.pathname;
-    
-    // If in a subdirectory like /contact/ or /work/, use relative path to go up one level
-    if (pathname.includes('/contact/') || pathname.includes('/work/')) {
-        return '../';
-    } else {
-        return './';
-    }
-}
-
 // Function to initialize the navbar logo
 function initNavbarLogo() {
     const logo = document.getElementById('navbar-logo');
-    const pathPrefix = getPathPrefix();
     
     if (logo) {
         // Default logo (black version)
-        logo.src = pathPrefix + 'images/deluxo-full-black.png';
+        logo.src = '../images/deluxo-full-black.png';
         
         // Check if we're on the home page
         const isHomePage = document.body.classList.contains('home-page');
         
         if (isHomePage) {
             // Use white logo on home page initially
-            logo.src = pathPrefix + 'images/deluxo-full-white.png';
+            logo.src = '../images/deluxo-full-white.png';
             
             // Add scroll event listener for home page
             window.addEventListener('scroll', function() {
@@ -66,10 +52,10 @@ function initNavbarLogo() {
                     
                     if (window.scrollY > heroBottom - 100) {
                         document.querySelector('.navbar').classList.add('scrolled');
-                        logo.src = pathPrefix + 'images/deluxo-full-black.png';
+                        logo.src = '../images/deluxo-full-black.png';
                     } else {
                         document.querySelector('.navbar').classList.remove('scrolled');
-                        logo.src = pathPrefix + 'images/deluxo-full-white.png';
+                        logo.src = '../images/deluxo-full-white.png';
                     }
                 }
             });
@@ -77,18 +63,13 @@ function initNavbarLogo() {
     }
 }
 
-// Get component path based on current location
-function getComponentPath() {
-    return getPathPrefix() + 'components/';
-}
-
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Load promises array
     const loadPromises = [];
     
-    // Get the component base path
-    const componentPath = getComponentPath();
+    // Set constant component path
+    const componentPath = '../components/';
     
     // Load header
     if (document.getElementById('header-container')) {
@@ -111,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Handle footer logo if needed
                     const footerLogo = document.getElementById('footer-logo');
                     if (footerLogo) {
-                        footerLogo.src = getPathPrefix() + 'images/deluxo-full-white.png';
+                        footerLogo.src = '../images/deluxo-full-white.png';
                     }
                 })
         );
